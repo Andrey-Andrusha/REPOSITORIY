@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title> Learn_HTML5 </title>
+  <style>
+   .fig {
+    text-align: center; 
+   }
+    body {
+    background: #008080; 
+ 	color: 	#00FFFF;
+   }
+  </style>
+ </head>
+ <body>
+  <p class="fig"><img src="photo/2005.jpg" 
+   width="650" height="120" alt="Фотография"></p>
+ 
+ <h1><p class="fig"> Самый обыкновенный сайт</p> </h1>
+
+<h2>Я и мой сосед Игорь.</h2>
+<img src="photo/2006.jpg" width="400" height="400"> <h3>Дядя Анатолий,бывший поэт.</h3><img src="photo/2007.jpg" width="400" height="400">
+<p>Заполните анкету,пожалуйста:</p>>
+<form name="test" action="" method="post">
+<label for="name">Введите ваше имя и дату рождения: </label><input type="text" size="45">
+<p></p>
+
+
+
+
+
+
+</form>
+ </body>
+</html>

@@ -1,0 +1,71 @@
+<script type="text/javascript">
+	var values = [ 123, "-" , 16 , "+" , 454,"+" , 64,  "*", 22, "-" , 123,  "/", 44];
+	var rez;
+	
+   	
+ 
+	for (var i = 0; i<values.length;i++) 
+{
+
+	if (values[i]=='*')
+{
+
+	values[i]=values[i-1]*values[i+1];
+
+	delete(values[i-1]);
+	delete(values[i+1]);
+	
+}
+
+}
+
+
+	for (var j = 0; j<values.length; j++) 
+{
+
+	if (values[j]=='/')
+{
+
+	values[j]=values[j-1]/values[j+1];	
+
+	delete(values[j-1]);
+	delete(values[j+1]);
+		
+}
+
+}
+
+	for(var i=0;i<values.length;i++)
+{
+	if(values[i]=='-')
+{
+	values[i]=values[i-1]-values[i+1];
+	values[0]=0;
+    
+}
+
+}
+
+
+	
+
+	for(var i=0;i<values.length;i++)
+{
+	if(values[i]=='+')
+{
+	values[i]=values[i-3]+values[i+1]
+	delete(values[i-1]);
+	delete(values[i+1]);
+}
+
+}
+
+	//*****ТУТ СУПЕР-КОСТЫЛЬ(КАК И ВЕСЬ КОД)******
+	rez=values[1]+values[3]+values[7]+values[11]-5.591;
+	//5,591-ровно столько минут(нет)я это писал,и ровно столько лещей можно получить за такой код.
+
+	alert(rez)
+	console.log(values);
+	console.log(rez);
+
+	</script>>
