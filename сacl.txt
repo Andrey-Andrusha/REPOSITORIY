@@ -1,71 +1,72 @@
 <script type="text/javascript">
-	var values = [ 123, "-" , 16 , "+" , 454,"+" , 64,  "*", 22, "-" , 123,  "/", 44];
-	var rez;
-	
-   	
- 
-	for (var i = 0; i<values.length;i++) 
-{
-
-	if (values[i]=='*')
-{
-
-	values[i]=values[i-1]*values[i+1];
-
-	delete(values[i-1]);
-	delete(values[i+1]);
-	
-}
-
-}
+var values = [23,12,34,64,2,21,75]; 
+var operators = ['+','-','*','/','+','-']; 
+var result; 
 
 
-	for (var j = 0; j<values.length; j++) 
-{
-
-	if (values[j]=='/')
-{
-
-	values[j]=values[j-1]/values[j+1];	
-
-	delete(values[j-1]);
-	delete(values[j+1]);
-		
-}
-
-}
-
-	for(var i=0;i<values.length;i++)
-{
-	if(values[i]=='-')
-{
-	values[i]=values[i-1]-values[i+1];
-	values[0]=0;
-    
-}
-
-}
+	for (var i = 0; i < operators.length; i++)
+	{ 
+	switch(operators[i])
+	{ 
+case '*':{ 
+values[i+1]=mult(values[i],values[i+1]); 
+values[i]=0; 
+if(i>0)operators[i]=operators[i-1]; 
+break; 
+	}; 
 
 
-	
+case '/':{ 
+values[i+1]=delenie(values[i],values[i+1]); 
+values[i]=0; 
+if(i>0)operators[i]=operators[i-1]; 
+break; 
+	}; 
+	} 
+	} 
 
-	for(var i=0;i<values.length;i++)
-{
-	if(values[i]=='+')
-{
-	values[i]=values[i-3]+values[i+1]
-	delete(values[i-1]);
-	delete(values[i+1]);
-}
 
-}
+for (var i = 0; i < operators.length; i++)
+	{ 
+switch(operators[i])
+	{ 
+case '+':{ 
+values[i+1]=summa(values[i],values[i+1]); 
+values[i]=0; 
+break; 
+	}; 
 
-	//*****ТУТ СУПЕР-КОСТЫЛЬ(КАК И ВЕСЬ КОД)******
-	rez=values[1]+values[3]+values[7]+values[11]-5.591;
-	//5,591-ровно столько минут(нет)я это писал,и ровно столько лещей можно получить за такой код.
 
-	alert(rez)
-	console.log(values);
-	console.log(rez);
+case '-':{ 
+values[i+1]=raznica(values[i],values[i+1]); 
+values[i]=0; 
+break; 
+	}; 
+	} 
+	} 
 
-	</script>>
+function summa(a, b) { 
+a+=b; 
+return a; 
+} 
+
+function raznica(a, b) { 
+a-=b; 
+return a; 
+} 
+
+function mult(a, b) { 
+a*=b; 
+return a; 
+} 
+
+function delenie(a, b) { 
+a/=b; 
+return a; 
+} 
+
+
+
+result=values[values.length-1] 
+console.log(result);
+</script>
